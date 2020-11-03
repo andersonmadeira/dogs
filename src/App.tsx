@@ -13,8 +13,12 @@ const App: React.FC = () => (
       <GlobalStyles />
       <Header />
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route path="/login" component={Login} />
+        <Route exact path="/">
+          <Home />
+        </Route>
+        <Route path="/login">
+          <Login />
+        </Route>
       </Switch>
       <Footer />
     </BrowserRouter>
