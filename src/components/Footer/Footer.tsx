@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '../../global-styles'
+import { Container } from '../../styles'
 
 const Footer: React.FC = () => <Container>Footer</Container>
 

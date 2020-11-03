@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import { login } from '../../services/pets'
+import Button from '../Forms/Button/Button'
+import Input from '../Forms/Input/Input'
 
 const LoginForm: React.FC = () => {
   const { url } = useRouteMatch()
@@ -17,9 +19,9 @@ const LoginForm: React.FC = () => {
     <section>
       <h1>Login</h1>
       <form action="" onSubmit={handleSubmit}>
-        <input type="text" value={username} onChange={({ target }) => setUsername(target.value)} />
-        <input type="password" value={password} onChange={({ target }) => setPassword(target.value)} />
-        <button>Entrar</button>
+        <Input label="User" type="text" name="username" />
+        <Input label="Password" type="password" name="password" />
+        <Button disabled>Entrar</Button>
       </form>
       <Link to={`${url}/register`}>Register</Link>
     </section>

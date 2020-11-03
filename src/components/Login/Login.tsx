@@ -1,6 +1,6 @@
 import React from 'react'
 import { Route, Switch, useRouteMatch } from 'react-router'
-import { Container } from '../../global-styles'
+import { Container } from '../../styles'
 import LoginForm from './LoginForm'
 import LoginRegister from './LoginRegister'
 import LoginPasswordLost from './LoginPasswordLost'

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Container } from '../../global-styles'
+import { Container } from '../../styles'
 import { ReactComponent as DogIcon } from '../../assets/dog.svg'
 import { HeaderStyled, MenuItemLogin, MenuItemLogo, Nav } from './styles'
 

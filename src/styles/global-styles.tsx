@@ -1,21 +1,8 @@
 import React from 'react'
 import { css, Global } from '@emotion/core'
-import styled from '@emotion/styled'
 import { useTheme } from 'emotion-theming'
-
-export type Theme = {
-  typography: {
-    primary: string
-    secondary: string
-  }
-}
-
-export const defaultTheme: Theme = {
-  typography: {
-    primary: 'Helvetica, Arial, sans-serif',
-    secondary: "'Spectral', Georgia",
-  },
-}
+import { Theme } from './theme'
+import styled from './styled'
 
 export const GlobalStyles: React.FC = () => {
   const theme = useTheme<Theme>()
