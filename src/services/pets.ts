@@ -6,4 +6,9 @@ const api = axios.create({
 })
 
 export const login = (username: string, password: string): Promise<AxiosResponse<PetsLoginResponse>> =>
-  api.post(`/json/jwt-auth/v1/token`, { username, password })
+  api
+    .post<PetsLoginResponse>(`/json/jwt-auth/v1/token`, { username, password })
+    .then((response) => {
+      localStorage.setItem('token', response.data.token)
+      return response
+    })
