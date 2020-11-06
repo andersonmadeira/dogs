@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { ChangeEvent } from 'react'
 
 export type ValidationTypes = 'email' | undefined | false
 
@@ -12,8 +12,8 @@ const Validations = {
 export type UseFormType = {
   value: string
   setValue: (val: string) => void
-  onChange: (e: ChangeEvent<HTMLElement>) => void
-  error: string
+  onChange: (e: ChangeEvent<HTMLInputElement>) => void
+  error: string | null
   validate: () => boolean
   onBlur: () => void
 }
@@ -24,19 +24,22 @@ export const useFormField = (type?: ValidationTypes): UseFormType => {
 
   const validate = (value: string): boolean => {
     if (type === false) return true
+
     if (value.length === 0) {
-      setError('Preencha um valor.')
+      setError('This field is required')
       return false
-    } else if (type && Validations[type] && !Validations[type].regex.test(value)) {
+    }
+
+    if (type && Validations[type] && !Validations[type].regex.test(value)) {
       setError(Validations[type].message)
       return false
-    } else {
-      setError(null)
-      return true
     }
+
+    setError(null)
+    return true
   }
 
-  const onChange = (event: ChangeEvent<HTMLElement>) => {
+  const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     if (error) validate(event.target.value)
     setValue(event.target.value)
   }

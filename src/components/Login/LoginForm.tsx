@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import { Link, useRouteMatch } from 'react-router-dom'
 import { useFormField } from '../../hooks'
 import { login } from '../../services/pets'
@@ -24,7 +24,7 @@ const LoginForm: React.FC = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input label="User" type="text" name="username" {...username} />
         <Input label="Password" type="password" name="password" {...password} />
-        <Button disabled>Entrar</Button>
+        <Button>Entrar</Button>
       </form>
       <Link to={`${url}/register`}>Register</Link>
     </section>

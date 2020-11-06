@@ -7,7 +7,7 @@ const Input: React.FC<InputProps> = ({ label, type, name, value, onChange, error
     <InputWrapper>
       <InputLabel htmlFor={name}>{label}</InputLabel>
       <InputStyled id={name} type={type} name={name} value={value} onChange={onChange} onBlur={onBlur} />
-      <InputError>something went wrong</InputError>
+      {error && <InputError>{error}</InputError>}
     </InputWrapper>
   )
 }
