@@ -2,7 +2,7 @@ import React from 'react'
 import { InputProps } from './types'
 import { InputError, InputStyled, InputWrapper, InputLabel } from './styles'
 
-const Input: React.FC<InputProps> = ({ label, type, name, value, onChange, error, onBlur }: InputProps) => {
+export const Input: React.FC<InputProps> = ({ label, type, name, value, onChange, error, onBlur }: InputProps) => {
   return (
     <InputWrapper>
       <InputLabel htmlFor={name}>{label}</InputLabel>
@@ -11,5 +11,3 @@ const Input: React.FC<InputProps> = ({ label, type, name, value, onChange, error
     </InputWrapper>
   )
 }
-
-export default Input

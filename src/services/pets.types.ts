@@ -4,3 +4,10 @@ export type PetsLoginResponse = {
   user_email: string
   user_nicename: string
 }
+
+export type PetsUserResponse = {
+  id: number
+  username: string
+  nome: string
+  email: string
+}
